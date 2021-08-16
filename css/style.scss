@@ -189,6 +189,13 @@ a {
             width: 181px;
             height: 101px;
           }
+          &:hover {
+            cursor: pointer;
+          }
+          &:hover + .detail > .detail__content {
+            text-decoration: underline;
+            color: $btn_color;
+          }
         }
         .detail {
           background-color: white;
@@ -220,6 +227,32 @@ a {
             }
           }
         }
+      }
+    }
+  }
+  .main{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 ;
+    .contents{
+      .title{
+        padding-bottom: 30px;
+        font-size: 2rem;
+      }
+      .wrap{
+        .articles{
+          display: flex;
+          .article{
+            display: flex;
+            flex-direction: row-reverse;
+          }
+        }
+      }
+    }
+    .side{
+      .title{
+        padding-bottom: 30px;
+        font-size: 1.5rem;
       }
     }
   }

@@ -140,6 +140,11 @@ a {
       .wrapper .ranking .article-list__item .cover img {
         width: 181px;
         height: 101px; }
+      .wrapper .ranking .article-list__item .cover:hover {
+        cursor: pointer; }
+      .wrapper .ranking .article-list__item .cover:hover + .detail > .detail__content {
+        text-decoration: underline;
+        color: #3081c9; }
       .wrapper .ranking .article-list__item .detail {
         background-color: white;
         height: 120px;
@@ -164,5 +169,20 @@ a {
             .wrapper .ranking .article-list__item .detail__stamp .tag:hover {
               cursor: pointer;
               color: black; }
+.wrapper .main {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0; }
+  .wrapper .main .contents .title {
+    padding-bottom: 30px;
+    font-size: 2rem; }
+  .wrapper .main .contents .wrap .articles {
+    display: flex; }
+    .wrapper .main .contents .wrap .articles .article {
+      display: flex;
+      flex-direction: row-reverse; }
+  .wrapper .main .side .title {
+    padding-bottom: 30px;
+    font-size: 1.5rem; }
 
 /*# sourceMappingURL=style.css.map */
