@@ -4,7 +4,10 @@ $btn_color: #3081c9;
 $white: #ffffff;
 $second_bg_color: #f2f2f2;
 $content_color: #3b3b3b;
-$sub_content_color: #a2a2a2;
+$sub_text: #a2a2a2;
+$text: #3b3b3b;
+$tag_color:#F1F1F1;
+$line_color: #E4E4E4;
 * {
   padding: 0;
   margin: 0;
@@ -110,9 +113,8 @@ a {
         .service {
           display: flex;
           align-items: center;
-          // justify-content: center;
+          margin-left: -10px;
           padding-top: 5px;
-          // margin-right: 930px;
           &__press-release {
             a {
               font-weight: bold;
@@ -189,6 +191,13 @@ a {
             width: 180px;
             height: 101px;
           }
+          &:hover {
+            cursor: pointer;
+          }
+          &:hover + .detail > .detail__content {
+            text-decoration: underline;
+            color: $btn_color;
+          }
         }
         .detail {
           background-color: white;
@@ -210,13 +219,133 @@ a {
             }
           }
           &__stamp {
-            color: $sub_content_color;
+            color: $sub_text;
             .tag {
               transition: all 0.5s;
               &:hover {
                 cursor: pointer;
                 color: black;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+  .main {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    min-width: 1125px;
+    .contents {
+      position: relative;
+      width: 779px;
+      margin-right: 15px;
+      .title {
+        padding-bottom: 30px;
+        font-size: 2rem;
+      }
+      .wrap {
+        .articles {
+          display: grid;
+          grid-template-columns: 50% 50%;
+          .article {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-right: 20px;
+            padding-bottom: 15px;
+            border-bottom: solid 1px $line_color;
+            margin-bottom: 15px;
+            &__cover {
+              img {
+                width: 100px;
+                height: 66px;
+              } 
+            }
+            &__detail {
+              .content {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: $text;
+                transition: all 0.5s;
+                &:hover{
+                  color: $btn_color;
+                  text-decoration: underline;
+                }
+              }
+              .credit {
+                color: $sub_text;
+                margin: 5px 0;
+                display: flex;
+                &__time-stamp {
+                  margin-right: 12px;
+                  i {
+                    margin-right: 5px;
+                  }
+                }
+                &__business-author{
+                  a{
+                    color: $sub_text;
+                    &:hover{
+                      color: $text;
+                    }
+                  }
+                }
+              }
+            }
+            .article__cover:hover + .article__detail a p  {
+              color: $btn_color;
+              text-decoration: underline;
+            };
+          }
+        }
+        .control {
+          display: flex;
+          justify-content: center;
+          .btn-more-detail {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: $btn_color;
+            color: $white;
+            font-weight: bold;
+            border-radius: 3px;
+            &:hover{
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+    .side {
+      width: 312px;
+      margin-left: 15px;
+      .title {
+        padding-bottom: 30px;
+        font-size: 1.5rem;
+      }
+      .list-keyword {
+        border-bottom: solid 1px $line_color;
+        padding-bottom: 15px;
+        &__item {
+          display: inline-block;
+          margin: 7px 0;
+          margin-right: 7px;
+          a {
+            display: inline-block;
+            padding: 3px 7px;
+            background-color: $tag_color;
+            color: $text;
+            border-radius: 11px;
+            border: 1px solid $tag_color;
+          }
+          &:hover{
+            a{
+              color: black;
+            }
+          }
+          &.more-detail{
+            a{
+              background-color: $white !important;
             }
           }
         }
